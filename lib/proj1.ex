@@ -12,7 +12,8 @@ defmodule Proj1 do
       :world
 
   """
-  def hello do
-    :world
+  use Application
+  def start(_type, _args) do
+	Proj1.Supervisor.start_link(name: Proj1.Supervisor)
   end
 end
