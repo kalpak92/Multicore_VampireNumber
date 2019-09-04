@@ -9,4 +9,5 @@ Proj1.Manager.spawn_children(manager, n1..n2, staging)
 :sys.get_state(manager, :infinity) # waiting for boss to DIE .
 
 #Check stage's state to retrieve the final result
-IO.inspect :sys.get_state(staging)
+# IO.inspect :sys.get_state(staging)
+for n <- :sys.get_state(staging), do: IO.inspect n
