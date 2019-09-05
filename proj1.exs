@@ -9,5 +9,11 @@ Proj1.Manager.spawn_children(manager, n1..n2, staging)
 :sys.get_state(manager, :infinity) # waiting for boss to DIE .
 
 #Check stage's state to retrieve the final result
-# IO.inspect :sys.get_state(staging)
-for n <- :sys.get_state(staging), do: IO.inspect n
+#Enum.each(:sys.get_state(staging), fn n -> 
+#case n do
+#[{x,y}] ->IO.puts "#{x*y} #{x} #{y}"
+#end
+#end)
+
+:sys.get_state(staging) |> Enum.group_by(fn {a, b} -> a * b end) |> Enum.each( fn {prod, values} -> IO.puts(["#{prod} "| Enum.map(values, fn {a,b} -> "#{a} #{b} " end)]) end)
+
