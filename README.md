@@ -1,8 +1,8 @@
 # Proj1
 
 ## Members
-### 1. Kalpak Seal - 8241-7219
-### 2. Sagnik Ghosh - 3343-6044
+   1. **Kalpak Seal** - 8241-7219
+   2. **Sagnik Ghosh** - 3343-6044
 
 ## No. of Worker actors created
 The number of worker actors created : **50**
@@ -13,22 +13,22 @@ The number of worker actors created : **50**
 
   `mix run proj1.exs 100000 200000`
 
-| No. of Workers | Unit Size | CPU/Real Time %age |
-|:--------------:|:---------:|:------------------:|
-|        1       |   100000  |         129        |
-|        2       |   50000   |         203        |
-|        5       |   20000   |         347        |
-|       10       |   10000   |         377        |
-|       20       |    5000   |         407        |
-|       30       |    3333   |         392        |
-|       40       |    2500   |         411        |
-|       50       |    2000   |         418        |
-|       60       |    1666   |         411        |
-|       70       |    1428   |         418        |
-|       80       |    1250   |         394        |
-|       90       |    1111   |         389        |
-|       100      |    1000   |         416        |
-|       200      |    500    |         417        |
+| No. of Workers | Unit Size | CPU/Real Time (%age) |
+|:--------------:|:---------:|:--------------------:|
+|        1       |   100000  |         129          |
+|        2       |   50000   |         203          |
+|        5       |   20000   |         347          |
+|       10       |   10000   |         377          |
+|       20       |    5000   |         407          |
+|       30       |    3333   |         392          |
+|       40       |    2500   |         411          |
+|       50       |    2000   |         418          |
+|       60       |    1666   |         411          |
+|       70       |    1428   |         418          |
+|       80       |    1250   |         394          |
+|       90       |    1111   |         389          |
+|       100      |    1000   |         416          |
+|       200      |    500    |         417          |
 
 From the data collected, we determined that CPU/real-time percentage is linearly dependent on the no. of workers.
 We inferred that increasing the no. of workers beyond a certain point yields no qualitative improvement on the performance for this set of input range.
@@ -39,17 +39,17 @@ Therefore, we have decided to keep the no. of workers to be `50` in our case, fo
 
 `mix run proj1.exs 1200 12600000`
 
-| No. of Workers | Unit Size | CPU/Real Time %age |
-|:--------------:|:---------:|:------------------:|
-|       10       |  1259880  |         214        |
-|       20       |   629940  |         423        |
-|       25       |   503952  |         518        |
-|       35       |   359965  |         682        |
-|       45       |   279973  |         728        |
-|       60       |   209980  |         728        |
-|       70       |   179982  |         714        |
-|       100      |   125988  |         734        |
-|       200      |   62994   |         726        |
+| No. of Workers | Unit Size | CPU/Real Time (%age) |
+|:--------------:|:---------:|:--------------------:|
+|       10       |  1259880  |         214          |
+|       20       |   629940  |         423          |
+|       25       |   503952  |         518          |
+|       35       |   359965  |         682          |
+|       45       |   279973  |         728          |
+|       60       |   209980  |         728          |
+|       70       |   179982  |         714          |
+|       100      |   125988  |         734          |
+|       200      |   62994   |         726          |
 
 As it can be seen, the CPU/real-time percentage is different and reaches close to 720%
 
