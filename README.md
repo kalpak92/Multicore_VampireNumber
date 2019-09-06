@@ -53,12 +53,6 @@ Therefore, we have decided to keep the no. of workers to be `50` in our case, fo
 
 As it can be seen, the CPU/real-time percentage is different and reaches close to 720%
 
-## Largest problem you managed to solve
-
-Executed range : **1200 to 126000000**
-
-`mix run proj1.exs 1200 126000000  10113.02s user 105.55s system 722% cpu 23:33.90 total`
-
 ## OUTPUT
 
 ```elixir
@@ -126,6 +120,12 @@ mix run proj1.exs 100000 200000  2.65s user 0.15s system 418% cpu 0.667 total
 ```
 
 ![htop output](Screen Shot 2019-09-06 at 6.42.17 PM.png "Performance snapshot")
+
+## Largest problem you managed to solve
+
+Executed range : **1200 to 126000000**
+
+`mix run proj1.exs 1200 126000000  10113.02s user 105.55s system 722% cpu 23:33.90 total`
 
 ## How to run
 1. Unzip the file in a directory and navigate to the directory.
