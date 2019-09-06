@@ -20,12 +20,10 @@ defmodule Proj1.Manager do
 	  subproblem_size = (Enum.count(range) / workers) |> Float.ceil() |> :erlang.trunc()
 	  subproblems = Enum.chunk_every(range, subproblem_size)
 	  workers = Enum.map(subproblems, fn subproblem -> {:ok, pid} = Proj1.Worker.start_link([])
-	  # Printing subproblem
-	  # IO.puts hd(Enum.to_list(subproblem))
 	  Proj1.Worker.run(pid, subproblem, staging)
 	  pid
 	  end)
-		
+
 	  Enum.map(workers, fn worker -> :sys.get_state(worker, :infinity) end)
 
 	  {:noreply, state}
