@@ -23,11 +23,9 @@ defmodule Vampire do
     else
       half = div(length(to_charlist(n)), 2)
       sorted = Enum.sort(String.codepoints("#{n}"))
-      Enum.filter(factor_pairs(n), fn {a, b} ->
-        char_len(a) == half && char_len(b) == half &&
-        Enum.count([a, b], fn x -> rem(x, 10) == 0 end) != 2 &&
-        Enum.sort(String.codepoints("#{a}#{b}")) == sorted
-      end)
+      enumequallength = Enum.filter(factor_pairs(n), fn {a, b} ->  char_len(a) == half && char_len(b) == half end)
+      pairswithnotrailingzero = Enum.filter(enumequallength,fn {a,b} -> Enum.count([a,b],fn x-> rem(x,10) == 0 end) != 2 end)
+      Enum.filter(pairswithnotrailingzero,fn {a,b} -> Enum.sort(String.codepoints("#{a}#{b}")) == sorted end)
     end
   end
 
