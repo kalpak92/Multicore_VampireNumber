@@ -119,7 +119,7 @@ Compiling 1 file (.ex)
 mix run proj1.exs 100000 200000  2.65s user 0.15s system 418% cpu 0.667 total
 ```
 
-![htop output](Screen Shot 2019-09-06 at 6.42.17 PM.png "Performance snapshot")
+![htop output](https://github.com/kalpak92/Multicore_VampireNumber/blob/master/Screen%20Shot%202019-09-06%20at%206.42.17%20PM.png "Performance snapshot")
 
 ## Largest problem you managed to solve
 
