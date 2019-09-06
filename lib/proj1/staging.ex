@@ -7,13 +7,13 @@ defmodule Proj1.Staging do
 	 GenServer.cast(pid, {:push, result})
 	end
 
-	@impl true	
+	@impl true
 	def init(state) do
 	 {:ok, state}
 	end
-	
+
 	@impl true
 	def handle_cast({:push, result}, state) do
 	 {:noreply, [result | state]}
 	end
-end	
+end
