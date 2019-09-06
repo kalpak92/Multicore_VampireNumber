@@ -16,6 +16,7 @@ defmodule Proj1.Manager do
 
 	@impl true
 	def handle_cast({:spawn_children, range, staging},state) do
+	  #Manager spawn workers, each having equal number of inputs
 	  workers = 100
 	  subproblem_size = (Enum.count(range) / workers) |> Float.ceil() |> :erlang.trunc()
 	  subproblems = Enum.chunk_every(range, subproblem_size)

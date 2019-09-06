@@ -14,6 +14,7 @@ defmodule Proj1.Staging do
 
 	@impl true
 	def handle_cast({:push, result}, state) do
+	#Stores individual worker's result as tuples
 	 {:noreply, [result | state]}
 	end
 end
