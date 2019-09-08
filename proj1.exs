@@ -16,10 +16,10 @@ if count_args === 2 do
 
     {:ok, manager} = Proj1.Manager.start_link([])
     Proj1.Manager.spawn_children(manager, n1..n2, staging)
-    
+
     :sys.get_state(manager, :infinity) # waiting for boss to DIE .
 
-    :sys.get_state(staging) # getting the output and printing it as per the required format
+    :sys.get_state(staging)                                           # getting the output and printing it as per the required format
       |> Enum.group_by(fn {a, b} -> a * b end)
       |> Enum.each( fn {prod, values} -> IO.puts(["#{prod} "| Enum.map(values, fn {a,b} -> "#{a} #{b} " end)]) end)
   end
