@@ -11,6 +11,6 @@ defmodule Proj1.Supervisor do
       {Proj1.Staging, name: Proj1.Staging}
     ]
 
-    Supervisor.init(children, strategy: :one_for_all)
+    Supervisor.init(children, strategy: :one_for_all)     # passed the children and the supervision strategy
   end
 end

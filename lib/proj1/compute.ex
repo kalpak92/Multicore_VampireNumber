@@ -13,7 +13,7 @@ end
 
 defmodule Vampire do
   def factor_pairs(n) do
-    #factor_pairs generates set of factors for any number,probable fangs
+    # factor_pairs generates set of factors for any number,probable fangs
     first = trunc(n / :math.pow(10, div(char_len(n), 2)))
     last  = :math.sqrt(n) |> round
     for i <- first .. last, rem(n, i) == 0, do: {i, div(n, i)}

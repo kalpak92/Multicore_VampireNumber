@@ -16,18 +16,20 @@ defmodule Proj1.Manager do
 
 	@impl true
 	def handle_cast({:spawn_children, range, staging},state) do
-	  #Manager spawn workers, each having equal number of inputs
-	  workers = 100
-	  subproblem_size = (Enum.count(range) / workers) |> Float.ceil() |> :erlang.trunc()
+	  # Manager spawn workers, each having equal number of inputs
+	  workers = 50
+
+		subproblem_size = (Enum.count(range) / workers) |> Float.ceil() |> :erlang.trunc()
+
 	  subproblems = Enum.chunk_every(range, subproblem_size)
-	  workers = Enum.map(subproblems, fn subproblem -> {:ok, pid} = Proj1.Worker.start_link([])
-	  Proj1.Worker.run(pid, subproblem, staging)
-	  pid
-	  end)
+
+		workers = Enum.map(subproblems, fn subproblem -> {:ok, pid} = Proj1.Worker.start_link([])
+																				Proj1.Worker.run(pid, subproblem, staging)
+	  																		pid
+	  																end)
 
 	  Enum.map(workers, fn worker -> :sys.get_state(worker, :infinity) end)
 
 	  {:noreply, state}
 	end
 end
-
